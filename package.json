@@ -1,8 +1,26 @@
 {
-  "name": "run-remain",
-  "version": "0.1.0",
-  "private": true,
+  "author": "Leo Meirelles <pitecus@gmail.com> (https://pitecus.github.io/)",
+  "browserslist": {
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ],
+    "production": [
+      ">1%",
+      "not dead",
+      "not op_mini all"
+    ]
+  },
   "dependencies": {
+    "dayjs": "1.10.6",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "4.0.3",
+    "web-vitals": "^0.2.4"
+  },
+  "devDependencies": {
+    "@craco/craco": "6.2.0",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
@@ -10,11 +28,6 @@
     "@types/node": "^12.20.16",
     "@types/react": "^16.14.11",
     "@types/react-dom": "^16.9.14",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "typescript": "^4.3.5",
-    "web-vitals": "^0.2.4",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
     "workbox-cacheable-response": "^5.1.4",
@@ -26,13 +39,13 @@
     "workbox-range-requests": "^5.1.4",
     "workbox-routing": "^5.1.4",
     "workbox-strategies": "^5.1.4",
-    "workbox-streams": "^5.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "workbox-streams": "^5.1.4",
+    "autoprefixer": "9.8.6",
+    "gh-pages": "3.2.3",
+    "postcss": "7.0.36",
+    "prettier": "2.3.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.4",
+    "typescript": "4.3.5"
   },
   "eslintConfig": {
     "extends": [
@@ -40,16 +53,21 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "homepage": "https://pitecus.github.io/run-remain",
+  "keywords": [
+    "running",
+    "training"
+  ],
+  "name": "run-remain",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier src/**/*",
+    "build": "craco build",
+    "craco": "craco",
+    "deploy": "gh-pages --dist build",
+    "dist": "NODE_ENV=production craco build",
+    "start": "craco start",
+    "test": "craco test"
+  },
+  "version": "0.1.0"
 }
